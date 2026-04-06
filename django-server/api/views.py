@@ -165,6 +165,47 @@ def my_card(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
+def check_member_entry(request, cin):
+    """Scan QR or search by CIN to check if member can enter."""
+    member = Member.objects.filter(cin=cin).select_related('sport_type', 'trainer').first()
+    if not member:
+        return Response({'allowed': False, 'message': 'Member not found'}, status=404)
+
+    today = timezone.now().date()
+    is_active = member.membership_end >= today if member.membership_end else False
+    days_remaining = (member.membership_end - today).days if is_active else 0
+
+    if not is_active:
+        # Auto-create unpaid notification
+        Notification.objects.get_or_create(
+            member=member,
+            type='expiry',
+            title='Membership Expired',
+            defaults={
+                'description': 'Your membership has expired. Please renew to access the gym.',
+                'is_unread': True,
+            }
+        )
+
+    return Response({
+        'allowed': is_active and member.has_paid,
+        'member': {
+            'name': f"{member.first_name} {member.last_name}",
+            'cin': member.cin,
+            'profile_pic': member.profile_pic,
+            'sport_type': member.sport_type.name if member.sport_type else None,
+            'trainer': f"{member.trainer.first_name} {member.trainer.last_name}" if member.trainer else None,
+            'membership_end': member.membership_end,
+            'days_remaining': days_remaining,
+        },
+        'has_paid': member.has_paid,
+        'membership_active': is_active,
+        'message': 'Access granted' if (is_active and member.has_paid) else 'Access denied — membership expired or unpaid',
+    })
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def my_membership_status(request):
     """Returns the full membership status for the logged-in user."""
     try:

@@ -23,6 +23,7 @@ urlpatterns = [
     path('members/', views.MemberListCreate.as_view()),
     path('members/<int:pk>/', views.MemberDetail.as_view()),
     path('members/card/<int:pk>/', views.member_card),
+    path('members/check/<str:cin>/', views.check_member_entry),
 
     # Trainers
     path('trainers/', views.TrainerListCreate.as_view()),
