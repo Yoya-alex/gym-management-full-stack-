@@ -36,7 +36,8 @@ export default function Router(isAuth) {
         { path: "trainers", element: <Trainers /> },
         { path: "payment", element: <Payment /> },
         { path: "profil", element: <Profil /> },
-        { path: "settings", element: <Settings /> }      
+        { path: "settings", element: <Settings /> },
+        { path: "users", element: <RegiterReception /> },
       ],
     },
     {

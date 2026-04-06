@@ -215,8 +215,8 @@ export default function NavSection() {
     ...(showAdminBoard
       ? [
           {
-            title: "register",
-            path: "/",
+            title: "Users",
+            path: "/dashboard/users",
             icon: getIcon("eva:person-add-fill"),
           },
         ]
