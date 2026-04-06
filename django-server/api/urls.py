@@ -16,6 +16,7 @@ urlpatterns = [
     path('me/card', views.my_card),
     path('me/enrollments', views.my_enrollments),
     path('me/enroll', views.enroll_class),
+    path('me/status', views.my_membership_status),
     path('notifications/<int:pk>/read', views.mark_notification_read),
 
     # Members (Admin)

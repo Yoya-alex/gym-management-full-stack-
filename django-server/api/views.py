@@ -165,6 +165,42 @@ def my_card(request):
 
 @api_view(['GET'])
 @permission_classes([IsAuthenticated])
+def my_membership_status(request):
+    """Returns the full membership status for the logged-in user."""
+    try:
+        member = request.user.member_profile
+    except Member.DoesNotExist:
+        return Response({'message': 'Profile not found'}, status=404)
+
+    today = timezone.now().date()
+    last_payment = Payment.objects.filter(member=member).order_by('-date').first()
+
+    is_active = False
+    days_remaining = 0
+    if member.membership_end:
+        is_active = member.membership_end >= today
+        days_remaining = (member.membership_end - today).days if is_active else 0
+
+    return Response({
+        'has_paid': member.has_paid,
+        'membership_active': is_active,
+        'membership_start': member.membership_start,
+        'membership_end': member.membership_end,
+        'days_remaining': days_remaining,
+        'sport_type': member.sport_type.name if member.sport_type else None,
+        'trainer': f"{member.trainer.first_name} {member.trainer.last_name}" if member.trainer else None,
+        'last_payment': {
+            'amount': last_payment.amount,
+            'date': last_payment.date,
+            'months': last_payment.months,
+            'payment_type': last_payment.payment_type,
+            'status': last_payment.status,
+        } if last_payment else None,
+    })
+
+
+@api_view(['GET'])
+@permission_classes([IsAuthenticated])
 def my_enrollments(request):
     """Get class enrollments for the logged-in user."""
     try:
