@@ -5,6 +5,7 @@ import LogoOnlyLayout from "./layouts/LogoOnlyLayout";
 //
 import Login from "./pages/Login";
 import Register from "./pages/Register";
+import Home from "./pages/Home";
 import DashboardApp from "./pages/DashboardApp";
 import Products from "./pages/Products";
 import Blog from "./pages/Blog";
@@ -48,6 +49,7 @@ export default function Router(isAuth) {
         { path: "/", element: <Navigate to="/login" /> },
         { path: "login", element: <Login /> },
         { path: "register", element: <Register /> },
+        { path: "home", element: <Home /> },
         { path: "calendar", element: <NotFound /> },
         { path: "*", element: <Navigate to="/404" /> },
       ],

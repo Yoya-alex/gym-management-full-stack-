@@ -41,18 +41,17 @@ export default function RegisterForm() {
       username: "",
       email: "",
       password: "",
-      roles: ["admin"],
+      roles: ["moderator"],
     },
     validationSchema: RegisterSchema,
     onSubmit: (values, actions) => {
       setError("");
       Axios.post(`${process.env.REACT_APP_API_URL}/api/auth/signup`, values)
         .then((response) => {
-          enqueueSnackbar("User Created Successfully!!", {
+          enqueueSnackbar("Account created successfully! Please log in.", {
             variant: "success",
           });
-          navigate("/login", { replace: true });
-          console.log(response);
+          navigate("/home", { replace: true });
         })
         .catch((err) => {
           setTimeout(() => {
