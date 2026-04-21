@@ -356,67 +356,138 @@
   
   .coaches-box .coache-content {
     display: grid;
-    grid-template-columns: repeat(
-      var(--three-col-layout),
-      minmax(min-content, 1fr)
-    );
+    grid-template-columns: repeat(var(--three-col-layout), minmax(min-content, 1fr));
     gap: 3rem;
   }
-  .coaches-box .coache-content .c-card {
-    position: relative;
-  }
-  .coaches-box .coache-content .c-card__img {
-    background-position: center;
-    background-size: cover;
-    max-width: 100%;
-    height: 100%;
-    border-left: 2px solid var(--color-yellow);
-  }
-  .coaches-box .coache-content .c-card .overlay {
-    position: absolute;
-    top: 0%;
-    right: 0;
-    color: #fff;
-    width: 0%;
-    height: 100%;
-    overflow: hidden;
+
+  /* ── Coach Card ── */
+  .c-card {
+    background-color: var(--color-black-light);
+    border-left: 3px solid var(--color-yellow);
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-direction: column;
-    background-color: rgba(43, 43, 43, 0.9);
-    transition: width 0.4s;
+    transition: transform 0.3s;
   }
-  .coaches-box .coache-content .c-card .overlay * {
+  .c-card:hover { transform: translateY(-4px); }
+
+  .c-card__img {
+    width: 100%;
+    height: 26rem;
+    object-fit: cover;
+    object-position: top;
+    display: block;
+  }
+
+  .c-card__body {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     flex: 1;
   }
-  .coaches-box .coache-content .c-card__content {
-    position: absolute;
-    bottom: 0;
-    background: linear-gradient(
-      to right,
-      var(--color-yellow),
-      var(--color-yellow-dark)
-    );
-    color: #000;
-    clip-path: polygon(0 0, 100% 0, 70% 100%, 0 100%);
-    width: 70%;
-    padding: 0.5rem 1rem;
-  }
-  .coaches-box .coache-content .c-card__content .c-name {
-    color: #e5383b;
-    text-transform: uppercase;
+
+  .c-name {
+    font-size: 1.8rem;
     font-weight: 700;
+    color: var(--color-yellow);
+    text-transform: uppercase;
   }
-  .coaches-box .coache-content .c-card__content .c-title {
-    text-transform: capitalize;
+
+  .c-title {
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: rgba(255,255,255,0.6);
   }
-  .coaches-box .coache-content .c-card:hover .overlay {
-    width: 16%;
+
+  .c-bio {
+    font-size: 1.4rem;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    flex: 1;
   }
-  .coaches-box .coache-content .c-card:hover .c-card__img {
-    filter: brightness(0.8);
+
+  /* ── Stars ── */
+  .c-rating {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
   }
+
+  .stars-display { display: flex; gap: 0.3rem; }
+
+  .star {
+    font-size: 2.2rem;
+    color: rgba(255,255,255,0.25);
+    cursor: default;
+    transition: color 0.2s;
+  }
+  .star.active { color: var(--color-yellow); }
+
+  .rating-label {
+    font-size: 1.3rem;
+    color: rgba(255,255,255,0.6);
+  }
+
+  .c-select-btn { margin-top: auto; align-self: flex-start; }
+
+  /* ── Rating Modal ── */
+  .rating-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 999;
+  }
+  .rating-modal[hidden] { display: none; }
+
+  .rating-modal__box {
+    background: var(--color-black-light);
+    border-top: 4px solid var(--color-yellow);
+    padding: 4rem;
+    max-width: 46rem;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    position: relative;
+    text-align: center;
+  }
+
+  .rating-modal__close {
+    position: absolute;
+    top: 1.2rem;
+    right: 1.6rem;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2.8rem;
+    cursor: pointer;
+    line-height: 1;
+  }
+
+  .modal-coach-name {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--color-yellow);
+    text-transform: uppercase;
+  }
+
+  .modal-hint { font-size: 1.4rem; color: rgba(255,255,255,0.7); }
+
+  .modal-stars { display: flex; gap: 1rem; }
+
+  .modal-star {
+    font-size: 3.6rem;
+    color: rgba(255,255,255,0.25);
+    cursor: pointer;
+    transition: color 0.15s, transform 0.15s;
+  }
+  .modal-star:hover, .modal-star.active { color: var(--color-yellow); transform: scale(1.15); }
   
   .section-review {
     padding: clamp(4rem, 10vw, 12rem) 0rem;

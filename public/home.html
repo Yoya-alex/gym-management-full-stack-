@@ -28,7 +28,7 @@
 
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a href="#home">Home</a>
             </li>
             <li>
               <a href="#about">About</a>
@@ -41,6 +41,9 @@
             </li>
             <li>
               <a href="#contact">Contact</a>
+            </li>
+            <li>
+              <a href="/index.html" class="btn btn__primary" style="padding: 0.5rem 1.2rem; border-radius: 4px;">Management</a>
             </li>
           </ul>
         </nav>
@@ -265,151 +268,96 @@
       <section class="section-coaches" id="trainers">
         <div class="container coaches-box" data-aos="fade-up">
           <header class="coache-heading">
-            <h2 class="heading heading--2 underline margin-bottom">
-              OUR team 
-            </h2>
-            <p>
-              Young and motivated team.
-            </p>
+            <h2 class="heading heading--2 underline margin-bottom">OUR Team</h2>
+            <p>Young and motivated team. Pick your coach and start your journey.</p>
           </header>
 
           <article class="coache-content">
-            <div class="c-card">
-              <img
-                src="img/coache-1.jpg"
-                alt="coache one"
-                class="c-card__img"
-                width="550"
-                height="550"
-              />
 
-              <div class="overlay">
-                <img
-                  src="./img/logo-whatsapp.svg"
-                  alt="whatsapp-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-facebook.svg"
-                  alt="facebook-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-instagram.svg"
-                  alt="instagram-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-twitter.svg"
-                  alt="twitter-icon"
-                  width="30"
-                  height="30"
-                />
-              </div>
-
-              <div class="c-card__content">
+            <!-- Coach 1 -->
+            <div class="c-card" data-coach-id="1">
+              <img src="img/coache-1.jpg" alt="El Bachir Outidrarine" class="c-card__img" width="550" height="550" />
+              <div class="c-card__body">
                 <p class="c-name">El Bachir Outidrarine</p>
-                <p class="c-title">Full-Stack Dev</p>
+                <p class="c-title">Strength &amp; Conditioning</p>
+                <p class="c-bio">5+ years helping athletes build power and endurance. Specialises in weight training and HIIT programs tailored to your goals.</p>
+                <div class="c-rating" aria-label="Coach rating">
+                  <div class="stars-display" data-id="1">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                  </div>
+                  <span class="rating-label">No ratings yet</span>
+                </div>
+                <button class="btn btn__primary c-select-btn" data-coach="El Bachir Outidrarine">Select Coach</button>
               </div>
             </div>
 
-            <div class="c-card">
-              <img
-                src="img/coache-2.jpg"
-                alt="coache one"
-                class="c-card__img"
-                width="550"
-                height="550"
-              />
-
-              <div class="overlay">
-                <img
-                  src="./img/logo-whatsapp.svg"
-                  alt="whatsapp-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-facebook.svg"
-                  alt="facebook-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-instagram.svg"
-                  alt="instagram-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-twitter.svg"
-                  alt="twitter-icon"
-                  width="30"
-                  height="30"
-                />
-              </div>
-
-              <div class="c-card__content">
+            <!-- Coach 2 -->
+            <div class="c-card" data-coach-id="2">
+              <img src="img/coache-2.jpg" alt="Salma El Allali" class="c-card__img" width="550" height="550" />
+              <div class="c-card__body">
                 <p class="c-name">Salma El Allali</p>
-                <p class="c-title">Front-end Dev</p>
+                <p class="c-title">Yoga &amp; Flexibility</p>
+                <p class="c-bio">Certified yoga instructor with a passion for mindfulness and mobility. Helps members reduce stress and improve flexibility.</p>
+                <div class="c-rating" aria-label="Coach rating">
+                  <div class="stars-display" data-id="2">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                  </div>
+                  <span class="rating-label">No ratings yet</span>
+                </div>
+                <button class="btn btn__primary c-select-btn" data-coach="Salma El Allali">Select Coach</button>
               </div>
             </div>
 
-            <div class="c-card">
-              <img
-                src="img/coache-3.jpg"
-                alt="coache three"
-                class="c-card__img"
-                width="550"
-                height="550"
-              />
-              <div class="overlay">
-                <img
-                  src="./img/logo-whatsapp.svg"
-                  alt="whatsapp-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-facebook.svg"
-                  alt="facebook-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-instagram.svg"
-                  alt="instagram-icon"
-                  width="30"
-                  height="30"
-                />
-
-                <img
-                  src="./img/logo-twitter.svg"
-                  alt="twitter-icon"
-                  width="30"
-                  height="30"
-                />
-              </div>
-
-              <div class="c-card__content">
+            <!-- Coach 3 -->
+            <div class="c-card" data-coach-id="3">
+              <img src="img/coache-3.jpg" alt="Marouane Ezzouid" class="c-card__img" width="550" height="550" />
+              <div class="c-card__body">
                 <p class="c-name">Marouane Ezzouid</p>
-                <p class="c-title">Full-Stack Dev</p>
+                <p class="c-title">CrossFit &amp; Cardio</p>
+                <p class="c-bio">CrossFit Level 2 trainer focused on functional fitness. Builds custom cardio plans that push your limits safely and effectively.</p>
+                <div class="c-rating" aria-label="Coach rating"></div>
+                  <div class="stars-display" data-id="3">
+                    <span class="star" data-value="1">&#9733;</span>
+                    <span class="star" data-value="2">&#9733;</span>
+                    <span class="star" data-value="3">&#9733;</span>
+                    <span class="star" data-value="4">&#9733;</span>
+                    <span class="star" data-value="5">&#9733;</span>
+                  </div>
+                  <span class="rating-label">No ratings yet</span>
+                </div>
+                <button class="btn btn__primary c-select-btn" data-coach="Marouane Ezzouid">Select Coach</button>
               </div>
             </div>
+
           </article>
         </div>
       </section>
+
+      <!-- RATING MODAL -->
+      <div class="rating-modal" id="ratingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" hidden>
+        <div class="rating-modal__box">
+          <button class="rating-modal__close" id="closeModal" aria-label="Close">&times;</button>
+          <h3 class="heading heading--2" id="modalTitle">Rate Your Coach</h3>
+          <p id="modalCoachName" class="modal-coach-name"></p>
+          <p class="modal-hint">How was your training session?</p>
+          <div class="modal-stars" id="modalStars" role="group" aria-label="Star rating">
+            <span class="star modal-star" data-value="1">&#9733;</span>
+            <span class="star modal-star" data-value="2">&#9733;</span>
+            <span class="star modal-star" data-value="3">&#9733;</span>
+            <span class="star modal-star" data-value="4">&#9733;</span>
+            <span class="star modal-star" data-value="5">&#9733;</span>
+          </div>
+          <button class="btn btn__primary" id="submitRating">Submit Rating</button>
+        </div>
+      </div>
 
       <!-- SECTION REVIEW -->
       <section class="section-review" id="review">
@@ -559,5 +507,66 @@
     </footer>
 
     <script src="./index.js"></script>
+    <script>
+      // ── Coach Rating System ──────────────────────────────────────────────
+      const ratings = {}; // { coachId: { total, count } }
+      let activeCoachId = null;
+      let selectedRating = 0;
+
+      const modal = document.getElementById('ratingModal');
+      const modalCoachName = document.getElementById('modalCoachName');
+      const modalStars = document.querySelectorAll('.modal-star');
+      const submitBtn = document.getElementById('submitRating');
+      const closeBtn = document.getElementById('closeModal');
+
+      // Open modal when "Select Coach" is clicked (after training, user rates)
+      document.querySelectorAll('.c-select-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+          const card = btn.closest('.c-card');
+          activeCoachId = card.dataset.coachId;
+          modalCoachName.textContent = btn.dataset.coach;
+          selectedRating = 0;
+          resetModalStars();
+          modal.hidden = false;
+        });
+      });
+
+      // Modal star hover + click
+      modalStars.forEach(star => {
+        star.addEventListener('mouseover', () => highlightModalStars(+star.dataset.value));
+        star.addEventListener('mouseout', () => highlightModalStars(selectedRating));
+        star.addEventListener('click', () => { selectedRating = +star.dataset.value; highlightModalStars(selectedRating); });
+      });
+
+      function highlightModalStars(val) {
+        modalStars.forEach(s => s.classList.toggle('active', +s.dataset.value <= val));
+      }
+      function resetModalStars() {
+        modalStars.forEach(s => s.classList.remove('active'));
+      }
+
+      // Submit rating
+      submitBtn.addEventListener('click', () => {
+        if (!selectedRating) return;
+        if (!ratings[activeCoachId]) ratings[activeCoachId] = { total: 0, count: 0 };
+        ratings[activeCoachId].total += selectedRating;
+        ratings[activeCoachId].count += 1;
+        updateCardRating(activeCoachId);
+        modal.hidden = true;
+      });
+
+      closeBtn.addEventListener('click', () => { modal.hidden = true; });
+      modal.addEventListener('click', e => { if (e.target === modal) modal.hidden = true; });
+
+      function updateCardRating(id) {
+        const { total, count } = ratings[id];
+        const avg = total / count;
+        const card = document.querySelector(`.c-card[data-coach-id="${id}"]`);
+        const starsEl = card.querySelector('.stars-display');
+        const label = card.querySelector('.rating-label');
+        starsEl.querySelectorAll('.star').forEach(s => s.classList.toggle('active', +s.dataset.value <= Math.round(avg)));
+        label.textContent = `${avg.toFixed(1)} / 5  (${count} rating${count > 1 ? 's' : ''})`;
+      }
+    </script>
   </body>
 </html>
